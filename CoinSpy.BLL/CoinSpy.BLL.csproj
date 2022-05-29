@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CoinCheck.Models\CoinCheck.Models.csproj" />
+    <ProjectReference Include="..\CoinSpy.Utils\CoinSpy.Utils.csproj" />
   </ItemGroup>
 
 </Project>

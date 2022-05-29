@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CoinCheck.Entities\CoinCheck.Entities.csproj" />
-    <ProjectReference Include="..\CoinCheck.Utils\CoinCheck.Utils.csproj" />
+    <ProjectReference Include="..\CoinSpy.Entities\CoinSpy.Entities.csproj" />
+    <ProjectReference Include="..\CoinSpy.Utils\CoinSpy.Utils.csproj" />
   </ItemGroup>
 
 </Project>

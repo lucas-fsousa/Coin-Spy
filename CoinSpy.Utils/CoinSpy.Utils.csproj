@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CoinCheck.DAL\CoinCheck.DAL.csproj" />
-    <ProjectReference Include="..\CoinCheck.Models\CoinCheck.Models.csproj" />
+    <ProjectReference Include="..\CoinSpy.DAL\CoinSpy.DAL.csproj" />
+    <ProjectReference Include="..\CoinSpy.Models\CoinSpy.Models.csproj" />
   </ItemGroup>
 
 </Project>
