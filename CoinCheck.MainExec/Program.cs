@@ -23,13 +23,10 @@ namespace CoinCheck.MainExec {
       _userNotification = new UserNotification(_startExecution);
     }
 
-    /// <summary>
-    /// Responsible for the complete execution of the bot
-    /// </summary>
     protected void Run() {
       LoadBrokers();
       SetCoins(); // 1° to exec
-      //Notify(); // last to exec
+      Notify(); // last to exec
     }
 
     private void LoadBrokers() {
@@ -45,7 +42,6 @@ namespace CoinCheck.MainExec {
     private void Notify() {
       _userNotification.Notify();
     }
-
 
     private void SetCoins() {
       _binance.Change();

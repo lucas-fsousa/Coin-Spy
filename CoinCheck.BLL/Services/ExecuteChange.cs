@@ -92,7 +92,7 @@ namespace CoinCheck.Services {
             string symbol = name + baseSymbol;
 
             CoinModel coinDetailsModel = new();
-            coinDetailsModel.Broker = nameof(key);
+            coinDetailsModel.Broker = key.AsString();
             coinDetailsModel.ChangePercent = gateioCoin.change_percentage.AsString();
             coinDetailsModel.CloseTime = gateioCoin.etf_pre_timestamp.AsString();
             coinDetailsModel.HighPrice = gateioCoin.high_24h.AsString();
@@ -119,7 +119,7 @@ namespace CoinCheck.Services {
 
           foreach(BinanceCoinModel responseAPI in AppAux.GetObjFromJsonAPI<List<BinanceCoinModel>>(url)) {
             CoinModel coin = new();
-            coin.Broker = nameof(key);
+            coin.Broker = key.AsString();
             coin.ChangePercent = responseAPI.priceChangePercent.AsString();
             coin.CloseTime = responseAPI.closeTime.AsString();
             coin.HighPrice = responseAPI.highPrice.AsString();
@@ -150,7 +150,7 @@ namespace CoinCheck.Services {
             string symbol = name + baseSymbol;
 
             CoinModel coin = new();
-            coin.Broker = nameof(key);
+            coin.Broker = key.AsString();
             coin.ChangePercent = responseAPI.change_24.AsString();
             coin.CloseTime = "00000";
             coin.HighPrice = responseAPI.high.AsString();
@@ -187,7 +187,7 @@ namespace CoinCheck.Services {
             MarketplaceBtcModel responseAPI = AppAux.GetObjFromJsonAPI<List<MarketplaceBtcModel>>(url).First();
 
             CoinModel coin = new();
-            coin.Broker = nameof(key);
+            coin.Broker = key.AsString();
             coin.ChangePercent = "0";
             coin.CloseTime = "00000";
             coin.HighPrice = responseAPI.high.AsString();
