@@ -20,7 +20,7 @@ It is an application created purely in .NET 5 whose objective is to analyze mult
 - STEP 4: Open the project with an editor of your choice and compile the file to generate the executables.
 
 ### Easy Mode
-- STEP 1: Click on the following link to download the program ready to run. [DOWNLOAD](https://github.com/lucas-fsousa/CoinCheck/raw/master/ExtraFiles/release.zip)
+- STEP 1: Click on the following link to download the program ready to run. [DOWNLOAD](https://github.com/lucas-fsousa/Coin-Spy/blob/master/CoinCheck.MainExec/ExtraFiles/release.zip)
 - STEP 2: Unzip the release file to use it
 
 ## Configuration
