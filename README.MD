@@ -48,7 +48,7 @@ It is an application created purely in .NET 5 whose objective is to analyze mult
 		<add key="mailCopy" value="copy01@gmail.com;copy02@gmail.com;@copy03@gmail.com"/>
 
 		<!--PERCENT TO CHANGE COINS IN THE DATABASE - DEFAULT IS 0.05
-		    Represents the gross change in currency value of currencies.-->
+		    Represents the gross change in currency value-->
 		<add key="percentChange" value="0.05"/>
 	</appSettings>
 	<connectionStrings>

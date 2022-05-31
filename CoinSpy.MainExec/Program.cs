@@ -25,8 +25,8 @@ namespace CoinCheck.MainExec {
 
     protected void Run() {
       LoadBrokers();
-      SetCoins(); // 1° to exec
-      Notify(); // last to exec
+      SetCoins();
+      Notify();
     }
 
     private void LoadBrokers() {
