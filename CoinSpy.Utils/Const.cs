@@ -1,4 +1,6 @@
-﻿namespace CoinCheck.Utils {
+﻿using System;
+
+namespace CoinCheck.Utils {
   public static class Const {
 
     #region BINANCE
@@ -34,6 +36,15 @@
 
     #endregion
 
+    #region FTX 
+
+    public const string FTX_API = "https://ftx.com/api";
+    //public const string MARKETPLACEBTC_TICKER_ALL = "https://api.mercadobitcoin.net/api/v4/tickers";
+    public const string FTX_SYMBOL_ALL = "https://ftx.com/api/markets";
+    public const string FTX_SYMBOL = "https://ftx.com/api/markets/*symbolHere*/candles?resolution=300";
+
+
+    #endregion
 
   }
 }

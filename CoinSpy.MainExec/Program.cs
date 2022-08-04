@@ -7,11 +7,10 @@ using System.Threading;
 
 namespace CoinCheck.MainExec {
 
-  internal class Program {
+  internal class Program: IDisposable {
     private readonly DateTime _startExecution = DateTime.Now;
     private readonly Binance _binance;
     private readonly GateIo _gateio;
-    private readonly UserNotification _userNotification;
     private readonly MarketplaceBtc _marketplaceBtc;
     private readonly Bitso _bitso;
 
@@ -20,13 +19,12 @@ namespace CoinCheck.MainExec {
       _binance = new Binance();
       _gateio = new GateIo();
       _bitso = new Bitso();
-      _userNotification = new UserNotification(_startExecution);
+
+      LoadBrokers();
     }
 
     protected void Run() {
-      LoadBrokers();
       SetCoins();
-      Notify();
     }
 
     private void LoadBrokers() {
@@ -34,13 +32,9 @@ namespace CoinCheck.MainExec {
       int i = 1;
       foreach(string brokerName in X.EnumToDict<IdentityAPI>().Values.OrderBy(x => x.Length).ToList()) {
         string.Format($"  [{i} - {brokerName}]").Print();
-        i++;
         Thread.Sleep(500);
+        i++;
       }
-    }
-
-    private void Notify() {
-      _userNotification.Notify();
     }
 
     private void SetCoins() {
@@ -53,11 +47,16 @@ namespace CoinCheck.MainExec {
     static void Main(string[] args) {
       Log.Add($" --------- STARTING PROCCESS - {DateTime.Now} ---------\n", "PROGRAM");
 
-      new Program().Run();
+      using(Program app = new())
+        app.Run();
 
       Log.Add($"\n --------- PROCCESS ENDED - {DateTime.Now} ---------", "PROGRAM");
     }
 
-
+    public void Dispose() {
+      new UserNotification(_startExecution).Notify();
+      GC.SuppressFinalize(this);
+      GC.Collect();
+    }
   }
 }

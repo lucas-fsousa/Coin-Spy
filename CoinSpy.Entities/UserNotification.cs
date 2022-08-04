@@ -99,9 +99,11 @@ namespace CoinCheck.Entities {
         string mailCopy = ConfigurationManager.AppSettings["mailCopy"];
         XEmail email = new(password, login, "UPDATE COINS");
 
-        List<CoinModel> lstDetails = _coin.Get().Where(x => x.LastUpdate >= _startExecution).ToList();
+        // STEP 1: Get all items that were updated while the bot was running
+        List<CoinModel> lstDetails = _coin.Get().Where(x => x.LastUpdate >= _startExecution).ToList(); 
 
         if(lstDetails.Count > 0) {
+          // STEP 2: Separates all items updated during robot execution into two lists
           List<CoinModel> lstNewAdds = lstDetails.Where(x => x.CaptureDate >= _startExecution).OrderByDescending(x => x.ChangePercent).ToList();
           List<CoinModel> lstPriceUpdates = lstDetails.Where(x => x.LastUpdate >= _startExecution && x.CaptureDate != x.LastUpdate).OrderByDescending(x => x.LastPrice).ToList();
           List<Attachment> lstAttachments = new();

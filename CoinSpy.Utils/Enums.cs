@@ -9,7 +9,8 @@ namespace CoinCheck.Utils {
     Binance,
     GateIO,
     MarketPlaceBtc,
-    Bitso
+    Bitso,
+    Ftx
   }
 
 }

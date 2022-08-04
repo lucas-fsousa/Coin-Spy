@@ -78,8 +78,9 @@ namespace CoinCheck.Services {
     }
 
     public List<CoinModel> ProccessJsonObject(IdentityAPI key) {
+      List<CoinModel> response = new();
       try {
-        List<CoinModel> response = new();
+        
 
         #region GATEIO CONVERT
 
@@ -207,6 +208,7 @@ namespace CoinCheck.Services {
         }
 
         #endregion
+
 
         return response;
       } catch(Exception ex) {
