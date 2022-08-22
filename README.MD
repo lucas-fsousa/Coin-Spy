@@ -24,7 +24,7 @@ It is an application created purely in .NET 5 whose objective is to analyze mult
 - STEP 2: Unzip the release file to use it
 
 ## Configuration
-- STEP 1: Copy the sql script to create the database model used. [Show model.sql](https://github.com/lucas-fsousa/Coin-Spy/blob/master/CoinCheck.MainExec/ExtraFiles/modelDB.sql)
+- STEP 1: Copy the sql script to create the database model used. [Show model.sql](https://github.com/lucas-fsousa/Coin-Spy/blob/master/DbModel.sql)
 - STEP 2: Make sure you have sqlserver installed on the machine and run the script to create the bases.
 - STEP 3: Go to the project folder and locate the App.Config file, if it is the version already compiled and ready to run, the file will be named CoinCheck.dll.config
 - STEP 4: open the file with a text editor of your choice and change the following information as needed.
